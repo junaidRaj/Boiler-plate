@@ -1,19 +1,18 @@
+import { AdUnits } from "@mui/icons-material";
 import {BrowserRouter as Router ,Routes ,Route} from "react-router-dom";
+import Admin from "../Admin/admin";
 import Home from "../Screens/home";
 import Login from "../Screens/login";
-import  QuizPage  from "../Screens/Quiz";
-import SignUp from "../Screens/signup";
-import StudentsList from "../Screens/Students";
+import Signup from "../Screens/signup";
 
 function AppRouter(){
     return<>
     <Router>
         <Routes>
-            <Route path="/:id" element={<Home/>}/>
+            <Route path="/" element={<Signup/>}/>
             <Route path="Login" element={<Login/>}/>
-            <Route path="SignUp" element={<SignUp/>}/>
-            <Route path="stdList" element={<StudentsList/>}/>
-            <Route path="QuizPage" element={<QuizPage/>}/>
+            <Route path="home:id/*" element={<Home/>}/>
+            <Route path="admin/*" element={<Admin/>}/>
         </Routes>
     </Router>
     </>
